@@ -1,0 +1,25 @@
+# (matrix, vect1) -> vect2
+# we assume length vect1 == length matrix[vect]
+def matVec(matrix,vector):
+  # initialized product vector
+  prodVect = []
+  # find length of vector
+  # length of vector = length of prodVec
+  length = len(vector)
+  #iterate through a range [0, length-1]
+  for i in range(length):
+    #initialize sum value to 0
+    value = 0
+    # for each element in respective matrix vector
+    for el in matrix[i]:
+      #increment product vector value by (respective value in vector * element)
+      value += (vector[i] * el)
+
+    prodVect.append(value)
+  return prodVect
+
+#test code
+mat = [[23,37,4], [2,47,5]]
+vect = [2,37]
+
+print(matVec(mat, vect))
